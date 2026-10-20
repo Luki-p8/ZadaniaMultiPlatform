@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BusinessCard.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BusinessCard"
+    xmlns:views="clr-namespace:BusinessCard.Views"
+    Shell.NavBarIsVisible="False"
+    Title="BusinessCard">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{OnIdiom Phone={DataTemplate views:MainPageMobile}, Default={DataTemplate views:MainPageDesktop}}"
+        Route="MainPage"/>
+
+</Shell>

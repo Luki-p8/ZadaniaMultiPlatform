@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessCard.Views.MainPageDesktop"
+             Title="MainPageDesktop">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border BackgroundColor="{StaticResource Secondary}"
+                Stroke="Transparent"
+                StrokeShape="RoundRectangle 20"
+                Padding="10"
+                Grid.Column="1"
+                Grid.Row="1">
+            <Grid ColumnDefinitions="*, 2*" RowDefinitions="*, 4*, *" ColumnSpacing="10" RowSpacing="10">
+                <Border StrokeShape="RoundRectangle 10"
+                        Stroke="Transparent"
+                        Grid.RowSpan="3">
+                    <Image Source="dotnet_bot.png"
+                       BackgroundColor="{StaticResource Primary}"/>
+                </Border>
+
+                <Label Text="{Binding Header, StringFormat='{0}!'}"
+                       Style="{StaticResource Headline}"
+                       Grid.Column="1"/>
+
+                <Label Text="{Binding DescriptionBloat, StringFormat='Nazywam się Łukasz Pudłowski i jestem uczniem klasy 4TP {0}'}"
+                       Grid.Column="1"
+                       Grid.Row="1"/>
+
+                <Button Command="{Binding SwitchHeadersCommand}"
+                        Text="Zmień"
+                        Grid.Column="1"
+                        Grid.Row="2"/>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>
